@@ -133,6 +133,8 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
   s.subspec 'AliPay' do |ali|
+     ali.source_files = 'AlixPay/2016_04_28/**/*.{h,m}'
+     ali.header_mappings_dir = 'AlixPay/2016_04_28/'
      ali.resource = 'AlixPay/2016_04_28/AlipaySDK.bundle'
      ali.vendored_libraries = "AlixPay/2016_04_28/libcrypto.a","AlixPay/2016_04_28/libssl.a"
      ali.vendored_frameworks = "AlixPay/2016_04_28/AliPaySDK.framework"
@@ -147,6 +149,7 @@ Pod::Spec.new do |s|
   end
   s.subspec 'ApplePay' do |ap|
     ap.source_files = "UPApplePay/1.1/**/*.h"
+    ap.framework = "PassKit"
     ap.vendored_libraries = "UPApplePay/1.1/libs/libUPAPayPlugin.a"
   end
 
